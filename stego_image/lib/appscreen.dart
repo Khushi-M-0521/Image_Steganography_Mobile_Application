@@ -18,6 +18,7 @@ class _AppScreenState extends State<AppScreen> {
   Screenmode _screenmode = Screenmode.encode;
   final _textController = TextEditingController();
   Uint8List? _image;
+
   void selectImage() async {
     Uint8List img = await pickImage(ImageSource.gallery);
     setState(() {
@@ -33,7 +34,7 @@ class _AppScreenState extends State<AppScreen> {
         title: Text("Steganography"),
       ),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
               color: Colors.white,
@@ -133,8 +134,7 @@ class _AppScreenState extends State<AppScreen> {
                   text: "Decode",
                 )
               ]),
-        ),
-      ),
+        
     );
   }
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:stego_image/appscreen.dart';
 import 'package:stego_image/splashscreen.dart';
+import 'package:stego_image/theme_constants.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,11 +14,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+      title: 'Stego App',
+      theme: ThemeData.light().copyWith(
+        colorScheme: lightColorScheme,
         useMaterial3: true,
       ),
+      darkTheme: ThemeData.dark().copyWith(
+        colorScheme: darkColorScheme,
+        useMaterial3: true,
+      ),
+
       home: const AppScreen(),
     );
   }

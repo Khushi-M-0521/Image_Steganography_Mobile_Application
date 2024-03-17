@@ -13,7 +13,7 @@ const mygradBT=LinearGradient(
           end: Alignment.bottomCenter,
         );
 
-const ColorScheme flexSchemeLight = ColorScheme(
+const ColorScheme lightColorScheme = ColorScheme(
   brightness: Brightness.light,
   primary: Color(0xffd9352f),
   onPrimary: Color(0xffffffff),

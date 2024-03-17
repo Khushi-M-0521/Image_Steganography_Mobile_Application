@@ -15,6 +15,7 @@ class AppScreen extends StatefulWidget {
 class _AppScreenState extends State<AppScreen> {
   final _textController = TextEditingController();
   Uint8List? _image;
+
   void selectImage() async {
     Uint8List img = await pickImage(ImageSource.gallery);
     setState(() {
@@ -30,10 +31,9 @@ class _AppScreenState extends State<AppScreen> {
         title: Text("Steganography"),
       ),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-            color: Colors.white,
             child: Stack(alignment: Alignment.center, children: [
               // ElevatedButton(onPressed: () {}, child: Text("Upload image")),
               _image != null
@@ -87,11 +87,7 @@ class _AppScreenState extends State<AppScreen> {
           ElevatedButton(onPressed: () {}, child: Text("Encode/Decode"))
         ],
       ),
-      bottomNavigationBar: Container(
-        color: Colors.black,
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 20.0),
-          child: GNav(
+      bottomNavigationBar:GNav(
               backgroundColor: Colors.black,
               color: Colors.white,
               activeColor: Colors.white,
@@ -108,8 +104,7 @@ class _AppScreenState extends State<AppScreen> {
                   text: "Decode",
                 )
               ]),
-        ),
-      ),
+        
     );
   }
 }

@@ -18,12 +18,19 @@ class MyApp extends StatelessWidget {
       theme: ThemeData.light().copyWith(
         colorScheme: lightColorScheme,
         useMaterial3: true,
+        elevatedButtonTheme: ElevatedButtonThemeData(style: ElevatedButton.styleFrom(
+          backgroundColor: lightColorScheme.primaryContainer,
+          foregroundColor: Colors.white,
+        ),),
+        bottomNavigationBarTheme: BottomNavigationBarThemeData().copyWith(
+          backgroundColor: Theme.of(context).colorScheme.secondaryContainer,
+        )
       ),
       darkTheme: ThemeData.dark().copyWith(
         colorScheme: darkColorScheme,
         useMaterial3: true,
       ),
-
+      debugShowCheckedModeBanner: false,
       home: const AppScreen(),
     );
   }
